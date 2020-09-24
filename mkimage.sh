@@ -179,6 +179,13 @@ else
 	fi
 fi
 
+if [ -f $UBOOT_PATH/idbloader.img ]
+then
+	echo -n "create idb loader..."
+	cp -a $UBOOT_PATH/idbloader.img $IMAGE_PATH/idbloader.img
+	echo "idb loader done."
+fi
+
 if [ -f $FLASH_CONFIG_FILE ]
 then
     echo "create config.cfg..."
