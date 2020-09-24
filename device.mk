@@ -1423,3 +1423,6 @@ PRODUCT_COPY_FILES += \
 # build libmpimmz for rknn
 PRODUCT_PACKAGES += \
 	libmpimmz
+
+PRODUCT_COPY_FILES += \
+    vendor/rockchip/common/bin/$(TARGET_ARCH)/parted:$(PRODUCT_OUT)/$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/parted
