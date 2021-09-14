@@ -224,6 +224,20 @@ if [ "$BUILD_UPDATE_IMG" = true ] ; then
         echo "Make update image failed!"
         exit 1
     fi
+
+    # Radxa Customization
+    if [[ $TARGET_PRODUCT =~ "rk3568_rock_3a_r" ]]; then
+        echo "Make gpt.img"
+        ./android-gpt.sh
+        if [ $? -eq 0 ]; then
+            echo "Make gpt image ok!"
+            mv $ANDROID_BUILD_TOP/$PACK_TOOL_DIR/rockdev/Image/gpt.img $ANDROID_BUILD_TOP/$IMAGE_PATH/ -f
+        else
+            echo "Make gpt image failed!"
+            exit 1
+        fi
+    fi
+
     cd -
     mv $PACK_TOOL_DIR/rockdev/update.img $IMAGE_PATH/ -f
     rm $PACK_TOOL_DIR/rockdev/Image -rf
