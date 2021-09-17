@@ -61,3 +61,4 @@ vendor.boot_completed                   u:object_r:vendor_boot_complete_prop:s0
 
 #for vendor/build.prop
 vendor.all.modules.ready                   u:object_r:vendor_system_public_prop:s0
+
