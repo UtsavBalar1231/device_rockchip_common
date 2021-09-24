@@ -111,10 +111,6 @@ export PROJECT_TOP=`gettop`
 lunch $TARGET_PRODUCT-$BUILD_VARIANT
 
 DATE=$(date  +%Y%m%d.%H%M)
-STUB_PATH=Image/"$TARGET_PRODUCT"_"$BUILD_VARIANT"_"$KERNEL_DTS"_"$BUILD_VERSION"_"$DATE"
-STUB_PATH="$(echo $STUB_PATH | tr '[:lower:]' '[:upper:]')"
-export STUB_PATH=$PROJECT_TOP/$STUB_PATH
-export STUB_PATCH_PATH=$STUB_PATH/PATCHES
 
 # build uboot
 if [ "$BUILD_UBOOT" = true ] ; then
@@ -249,6 +245,14 @@ fi
 
 if [ "$BUILD_PACKING" = true ] ; then
 echo "make and copy packaging in IMAGE "
+
+if [ "x$BUILD_VERSION" == "x" ]; then
+    BUILD_VERSION=${BUILD_NUMBER}
+fi
+STUB_PATH=Image/"$TARGET_PRODUCT"_"$BUILD_VARIANT"_"$KERNEL_DTS"_"$BUILD_VERSION"_"$DATE"
+STUB_PATH="$(echo $STUB_PATH | tr '[:lower:]' '[:upper:]')"
+export STUB_PATH=$PROJECT_TOP/$STUB_PATH
+export STUB_PATCH_PATH=$STUB_PATH/PATCHES
 
 mkdir -p $STUB_PATH
 mkdir -p $STUB_PATH/IMAGES/
