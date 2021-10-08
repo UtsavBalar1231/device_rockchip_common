@@ -226,7 +226,7 @@ if [ "$BUILD_UPDATE_IMG" = true ] ; then
     fi
 
     # Radxa Customization
-    if [[ $TARGET_PRODUCT =~ "rk3568_rock_3a_r" ]]; then
+    if [[ $TARGET_PRODUCT =~ "rk356" ]]; then
         echo "Make gpt.img"
         ./android-gpt.sh
         if [ $? -eq 0 ]; then
