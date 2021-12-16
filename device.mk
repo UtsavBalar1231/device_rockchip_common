@@ -1426,3 +1426,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/bin/$(TARGET_ARCH)/parted:$(PRODUCT_OUT)/$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/parted
+
+# add libmraa so
+$(call inherit-product-if-exists, vendor/radxa/libmraa/libmraa.mk)
