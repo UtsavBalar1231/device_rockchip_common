@@ -6,4 +6,7 @@
   shouldShowSystemDecors="false"
   shouldShowIme="true"
   forcedDensity="240"	/>
+<display
+  name="local:0"
+  fixedToUserRotation="2" />
 </display-settings>
