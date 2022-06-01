@@ -32,7 +32,9 @@ BLUETOOTH_ENABLE_FM := false
 endif
 endif
 
-# Wifi support
+# Realtek Wifi and BT support
+BOARD_CONNECTIVITY_VENDOR := RealTek
+
 ifeq ($(strip $(BOARD_CONNECTIVITY_VENDOR)), RealTek)
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_HOSTAPD_DRIVER        := NL80211
