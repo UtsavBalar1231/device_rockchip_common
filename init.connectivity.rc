@@ -3,32 +3,35 @@ on zygote-start
 
 # for bluetooth
     # change back to bluetooth from system
-    chown bluetooth net_bt /data/misc/bluetooth
-    mkdir /data/misc/bluedroid 0770 bluetooth net_bt
+    chown bluetooth bluetooth /data/misc/bluetooth
+    mkdir /data/misc/bluedroid 0770 bluetooth bluetooth
     # bluetooth LPM
-    chown bluetooth net_bt /proc/bluetooth/sleep/lpm
-    chown bluetooth net_bt /proc/bluetooth/sleep/btwrite    
+
+    chmod 0664 /proc/bluetooth/sleep/lpm
+    chmod 0664 /proc/bluetooth/sleep/btwrite
+    chown bluetooth bluetooth /proc/bluetooth/sleep/lpm
+    chown bluetooth bluetooth /proc/bluetooth/sleep/btwrite    
 
     chmod 0660 /dev/rtk_btusb
-    chown bluetooth net_bt /dev/rtk_btusb
+    chown bluetooth bluetooth /dev/rtk_btusb
     chmod 0660 /dev/rtkbt_dev
-    chown bluetooth net_bt /dev/rtkbt_dev
+    chown bluetooth bluetooth /dev/rtkbt_dev
 
     # bluetooth MAC address programming
-    chown bluetooth net_bt ro.bt.bdaddr_path
-    chown bluetooth net_bt /data/misc/bluetooth
+    chown bluetooth bluetooth ro.bt.bdaddr_path
+    chown bluetooth bluetooth /data/misc/bluetooth
     setprop ro.bt.bdaddr_path "/data/misc/bluetooth/bdaddr"
 
     chmod 0660 /dev/ttyS0
     chmod 0660 /dev/ttyS1
     chmod 0660 /dev/vflash
     chmod 0664 /dev/vendor_storage
-    chown bluetooth net_bt /dev/vflash
-    chown bluetooth net_bt /dev/vendor_storage
-    chown bluetooth net_bt /dev/ttyS1
-    chown bluetooth net_bt /dev/ttyS0
-    chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
-    chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluetooth /dev/vflash
+    chown bluetooth bluetooth /dev/vendor_storage
+    chown bluetooth bluetooth /dev/ttyS1
+    chown bluetooth bluetooth /dev/ttyS0
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chmod 0664 /sys/class/rfkill/rfkill0/state
 
 # for wifi
