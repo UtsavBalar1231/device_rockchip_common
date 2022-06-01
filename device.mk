@@ -208,6 +208,10 @@ PRODUCT_PACKAGES += \
 #audio
 $(call inherit-product-if-exists, hardware/rockchip/audio/tinyalsa_hal/codec_config/rk_audio.mk)
 
+# Enable Codec 2.0
+PRODUCT_PACKAGES += \
+    libstagefright_ccodec
+
 ifeq ($(BOARD_NFC_SUPPORT),true)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
