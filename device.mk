@@ -229,9 +229,10 @@ PRODUCT_COPY_FILES += \
     hardware/realtek/wlan/supplicant_overlay_config/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_rtk.conf \
     hardware/realtek/wlan/supplicant_overlay_config/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_rtk.conf
 
-#for ssv6051
+ifeq ($(strip $(BOARD_CONNECTIVITY_VENDOR)), Icomm)
 PRODUCT_COPY_FILES += \
-    vendor/rockchip/common/wifi/ssv6xxx/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_ssv.conf \
+    vendor/rockchip/common/wifi/ssv6xxx/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_ssv.conf
+endif
 
 PRODUCT_PACKAGES += \
     iperf \
@@ -296,7 +297,7 @@ ifneq ($(filter atv box, $(strip $(TARGET_BOARD_PLATFORM_PRODUCT))), )
       $(LOCAL_PATH)/tv/permissions/privapp-permissions-tv-common.xml:system/etc/permissions/privapp-permissions-tv-common.xml
 endif
 
-ifeq ($(filter MediaTek_mt7601 MediaTek RealTek Espressif, $(strip $(BOARD_CONNECTIVITY_VENDOR))), )
+ifeq ($(filter MediaTek_mt7601 MediaTek RealTek Espressif Icomm, $(strip $(BOARD_CONNECTIVITY_VENDOR))), )
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.connectivity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
 endif
