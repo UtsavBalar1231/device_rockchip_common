@@ -685,6 +685,10 @@ PRODUCT_PACKAGES += \
 
 ifeq ($(strip $(BOARD_HAVE_BLUETOOTH_RTK)), true)
 include hardware/realtek/rtkbt/rtkbt.mk
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/rtl8822cs_config:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/rtl8822cs_config \
+	$(LOCAL_PATH)/rtl8822cs_fw:$(TARGET_COPY_OUT_VENDOR)/etc/firmware/rtl8822cs_fw
 endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM_PRODUCT)), box)
