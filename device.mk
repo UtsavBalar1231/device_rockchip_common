@@ -234,6 +234,10 @@ PRODUCT_COPY_FILES += \
     vendor/rockchip/common/wifi/ssv6xxx/p2p_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_ssv.conf
 endif
 
+ifeq ($(strip $(BOARD_CONNECTIVITY_VENDOR)), RealTek)
+PRODUCT_PACKAGES += libwifi-hal-rtk
+endif
+
 PRODUCT_PACKAGES += \
     iperf \
     libiconv \
