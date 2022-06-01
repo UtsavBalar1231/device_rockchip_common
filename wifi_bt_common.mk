@@ -31,3 +31,18 @@ BLUETOOTH_USE_BPLUS := true
 BLUETOOTH_ENABLE_FM := false
 endif
 endif
+
+# Wifi support
+ifeq ($(strip $(BOARD_CONNECTIVITY_VENDOR)), RealTek)
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_HOSTAPD_DRIVER        := NL80211
+WPA_SUPPLICANT_VERSION	    := VER_0_8_X
+#
+# Use lib_driver_cmd_bcmdhd as rockchip added support
+# for realtek wifi there in the below commit:
+# https://gitlab.com/google-group/platform/hardware/broadcom/wlan/-/commit/486f90070f15a53804cfd3483d201e2ee571a423
+#
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE	    := realtek
+endif
