@@ -312,6 +312,7 @@ BOARD_USES_GENERIC_AUDIO ?= true
 
 # Wifi&Bluetooth
 BOARD_HAVE_BLUETOOTH ?= true
+include device/rockchip/common/wifi_bt_common.mk
 
 ifeq ($(strip $(BOARD_CONNECTIVITY_VENDOR)), Broadcom)
 BLUETOOTH_USE_BPLUS := true
@@ -323,7 +324,6 @@ BOARD_HAVE_BLUETOOTH_RTK := true
 endif
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/rockchip/$(TARGET_BOARD_PLATFORM)/bluetooth
-include device/rockchip/common/wifi_bt_common.mk
 
 #Camera flash
 BOARD_HAVE_FLASH ?= true
