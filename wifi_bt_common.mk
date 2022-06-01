@@ -31,6 +31,3 @@ BLUETOOTH_USE_BPLUS := true
 BLUETOOTH_ENABLE_FM := false
 endif
 endif
-
-BOARD_HAVE_BLUETOOTH_RTK := true
-
