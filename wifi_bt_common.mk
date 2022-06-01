@@ -1,4 +1,3 @@
-
 ifneq ($(strip $(TARGET_BOARD_PLATFORM)), sofia3gr)
 BOARD_CONNECTIVITY_VENDOR := Broadcom
 BOARD_CONNECTIVITY_MODULE := ap6xxx
@@ -19,10 +18,6 @@ endif
 
 # bluetooth support
 ifeq ($(strip $(BOARD_CONNECTIVITY_VENDOR)), Broadcom)
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/rockchip/$(TARGET_BOARD_PLATFORM)/bluetooth
-
 ifeq ($(strip $(PRODUCT_BUILD_MODULE)), px5car)
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/rockchip/px5/bluetooth
 endif
