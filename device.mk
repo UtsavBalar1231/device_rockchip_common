@@ -235,7 +235,10 @@ PRODUCT_COPY_FILES += \
 endif
 
 ifeq ($(strip $(BOARD_CONNECTIVITY_VENDOR)), RealTek)
-PRODUCT_PACKAGES += libwifi-hal-rtk
+PRODUCT_PACKAGES += \
+    libwifi-hal-rtk \
+    lib_driver_cmd_rtk \
+    lib_driver_cmd_bcmdhd
 endif
 
 PRODUCT_PACKAGES += \

@@ -48,4 +48,5 @@ WPA_SUPPLICANT_VERSION	    := VER_0_8_X
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE	    := realtek
+BOARD_WIFI_VENDOR           := realtek
 endif
