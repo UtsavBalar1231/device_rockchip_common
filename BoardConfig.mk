@@ -74,7 +74,7 @@ PRODUCT_PARAMETER_TEMPLATE ?= device/rockchip/common/scripts/parameter_tools/par
 TARGET_BOARD_HARDWARE_EGL ?= mali
 
 #Android GO configuration
-BUILD_WITH_GO_OPT ?= false
+BUILD_WITH_GO_OPT ?= true
 
 ifeq ($(BUILD_WITH_GO_OPT), true)
 PRODUCT_FSTAB_TEMPLATE ?= device/rockchip/common/scripts/fstab_tools/fstab_go.in
