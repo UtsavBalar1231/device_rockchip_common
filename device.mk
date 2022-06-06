@@ -304,10 +304,8 @@ ifneq ($(filter atv box, $(strip $(TARGET_BOARD_PLATFORM_PRODUCT))), )
       $(LOCAL_PATH)/tv/permissions/privapp-permissions-tv-common.xml:system/etc/permissions/privapp-permissions-tv-common.xml
 endif
 
-ifeq ($(filter MediaTek_mt7601 MediaTek RealTek Espressif Icomm, $(strip $(BOARD_CONNECTIVITY_VENDOR))), )
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.connectivity.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
-endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
